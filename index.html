@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <title>Part Out Values</title>
   </head>
@@ -24,8 +25,11 @@
 		font-weight: bold;
 	}
 </style>
-<table>
-<thead><tr><th>Set</th><th>RRP</th><th>POV</th><th>Ratio</th><th>Target Buying Price for 3x</th><th>Target Buying Price for 2.5x</th><th>Target Buying Price for 2x</th></tr></thead><tbody>
+	  
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+	  
+<table id="myTable">
+<thead><tr class="header"><th>Set</th><th>RRP</th><th>POV</th><th>Ratio</th><th>Target Buying Price for 3x</th><th>Target Buying Price for 2.5x</th><th>Target Buying Price for 2x</th></tr></thead><tbody>
  <tr><td>10967</td><td>£8.99</td><td>no</td><td>-</td><td>#VALUE!</td><td>#VALUE!</td><td>#VALUE!</td></tr>
  <tr><td>41694</td><td>£8.99</td><td>no</td><td>-</td><td>#VALUE!</td><td>#VALUE!</td><td>#VALUE!</td></tr>
  <tr><td>11017</td><td>£8.99</td><td>no</td><td>-</td><td>#VALUE!</td><td>#VALUE!</td><td>#VALUE!</td></tr>
@@ -673,5 +677,27 @@
  <tr><td>10964</td><td>£8.99</td><td>£0.00</td><td>0.00</td><td>£0.00</td><td>£0.00</td><td>£0.00</td></tr>
  <tr><td>10965</td><td>£17.99</td><td>£0.00</td><td>0.00</td><td>£0.00</td><td>£0.00</td><td>£0.00</td></tr>
 </tbody></table>
+	  
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
   </body>
 </html>
