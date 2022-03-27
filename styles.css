@@ -2,10 +2,27 @@ body {
   background-color: powderblue;
 }
 h1, h2, h3, h4, h5, h6 {
-  color: blue;
-}
-p, th, tr {
   color: black;
   font-family: roboto;
   font-size: 125%;
+}
+p {
+  color: black;
+  font-family: roboto;
+  font-size: 125%;
+}
+table {
+  font-size: 12px;
+  border: 1px solid #CCC; 
+  font-family: roboto;
+} 
+td {
+  padding: 3px;
+  margin: 4px;
+  border: 1px solid #CCC;
+}
+th {
+  background-color: #000000; 
+  color: #FFF;
+  font-weight: bold;
 }
