@@ -1,15 +1,24 @@
-<html>
+html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <title>Part Out Values</title>
   </head>
   <body>
-    <h3>This is a list of all the currently available sets and their part out values from BL.</h3>
-    <br>
-    <p>This uses sets in new condition, including extra parts, and breaking sets in sets. It excludes instructions, and the box.</p>
-    <br>
-    <br>
+	  <h3>This is a list of all the currently available sets and their part out values from BL.</h3>
+	  <br>
+	  <p>This uses sets in new condition, including extra parts, and breaking sets in sets. It excludes instructions, and the box.</p>
+	  <br>
+	  <p>Please select a date from the dropdown menu.</p>
+	  <br>
+	  <div class="dropdown">
+		  <button onclick="ddmenu()" class="dropbtn">20/03/22</button>
+		  <div id="myDropdown" class="dropdown-content">
+			  <a href="index.html">27/03/22</a>
+		  </div>
+	  </div>
+	  <br>
+<input type="text" id="myInput" onkeyup="search()" placeholder="Search for a set" title="Type in a set number">
    <table class="sortable", id="myTable">
 <thead><tr class="header"><th>Set</th><th>RRP</th><th>POV</th><th>Ratio</th><th>Target Buying Price for 3x</th><th>Target Buying Price for 2.5x</th><th>Target Buying Price for 2x</th></tr></thead><tbody>
  <tr><td>40549</td><td>£17.99</td><td>£69.32</td><td>3.85</td><td>£23.11</td><td>£27.73</td><td>£34.66</td></tr>
@@ -663,24 +672,43 @@
 	  
 	  
 	  
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
+ <script>
+  function search() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function ddmenu() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
       }
-    }       
+    }
   }
 }
-</script>
+  </script>
 </html>
