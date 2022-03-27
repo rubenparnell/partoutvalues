@@ -36,7 +36,7 @@
 body {
   background-color: #ebf6ff;
 }
-h3 {
+h1, h2, h3, h4, h5, h6 {
   color: black;
   font-family: roboto;
   font-size: 125%;
@@ -64,9 +64,10 @@ th {
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: #3498DB;
+  background-color: #black;
   color: white;
   padding: 16px;
+  font-family: roboto;
   font-size: 16px;
   border: none;
   cursor: pointer;
@@ -74,7 +75,7 @@ th {
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+  background-color: DimGray;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -99,6 +100,8 @@ th {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  font-family: roboto;
+  font-size: 16px;
 }
 
 /* Change color of dropdown links on hover */
