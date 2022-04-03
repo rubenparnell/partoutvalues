@@ -112,7 +112,9 @@ th {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-tr td:nth-child(2),
-tr td:nth-child(3) {
+tr td:nth-child(6),
+tr td:nth-child(8),
+tr td:nth-child(10),{
   color: red;
+  font-weight: bold;
 }
