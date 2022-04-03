@@ -48,6 +48,9 @@ p {
   font-family: roboto;
   font-size: 125%;
 }
+#small {
+  font-size: 75%;
+}
 table {
   font-size: 12px;
   border: 1px solid #CCC; 
